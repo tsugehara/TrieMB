@@ -1,5 +1,5 @@
 <?php
-class TTrieMB {
+class TrieMB {
 	var $trie = array();
 	var $s;
 	function __construct($s=NULL){
