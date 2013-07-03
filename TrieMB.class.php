@@ -1,6 +1,6 @@
 <?php
 class TrieMB {
-	var $trie = array();
+    var $trie = array();
 	var $s;
 	function __construct($s=NULL){
 		$this->s = $s;
@@ -16,7 +16,7 @@ class TrieMB {
 		$c = mb_substr($s, $i, 1);
 		if ($i == ($l-1)) {
 			if (! array_key_exists($c, $this->trie)) {
-				$this->trie[$c] = new TTrieMB($s);
+				$this->trie[$c] = new TrieMB($s);
 			} else {
 				$this->trie[$c]->s = $s;
 			}
@@ -24,7 +24,7 @@ class TrieMB {
 		}
 
 		if (! array_key_exists($c, $this->trie))
-			$this->trie[$c] = new TTrieMB();
+			$this->trie[$c] = new TrieMB();
 
 		return $this->trie[$c]->add($s, $i+1, $l);
 	}
